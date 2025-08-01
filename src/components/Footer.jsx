@@ -1,0 +1,82 @@
+import facebook from "../assets/images/index/facebook.png";
+import instagram from "../assets/images/index/instagram.png";
+import twitter from "../assets/images/index/twitter.png";
+import dribbble from "../assets/images/index/reseau-social.png";
+
+
+
+
+
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="footer-top">
+        <div className="newsletter-contact">
+          <div className="newsletter">
+            <h3>Nous suivre à travers nos œuvres et nos futurs projets</h3>
+            <form action="#" method="post">
+              <input
+                type="email"
+                id="email-newsletter"
+                name="email"
+                placeholder="Votre email ici"
+                aria-label="Votre email"
+                required
+                autoComplete="email"
+              />
+              <button type="submit" className="arrow-button"> &#8599;</button>
+            </form>
+            <p>
+              Rejoignez ma communauté et plongez dans mon univers visuel.
+              Soyez informé(e) de mes nouvelles séries photographiques,
+              expositions et inspirations.
+            </p>
+          </div>
+
+          <div className="contact">
+            <h3>Contact</h3>
+            <p>
+              16 rue Ile de Napoleon <br />
+              +33 6 17 02 64 97
+            </p>
+            <a href="mailto:medfc@yahoo.fr" aria-label="Envoyer un email">
+              medfc@yahoo.fr
+            </a>
+          </div>
+        </div>
+
+        <aside className="links">
+          <h3>Liens</h3>
+          <ul>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li><a href="/apropos.html">À propos</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <hr className="footer-line" />
+
+      <div className="footer-bottom">
+        <p>Copyright &copy; 2025 Alban Kevin</p>
+        <div className="icone-footer-bottom">
+          <a href="https://www.facebook.com" aria-label="Page Facebook">
+            <img src={facebook} alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com" aria-label="Page Instagram">
+            <img src={instagram} alt="Instagram" />
+          </a>
+          <a href="https://x.com/?mx=2" aria-label="Page Twitter">
+            <img src={twitter} alt="Twitter" />
+          </a>
+          <a href="https://dribbble.com" aria-label="Page Dribbble">
+            <img src={dribbble} alt="Dribbble" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
