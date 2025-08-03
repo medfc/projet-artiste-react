@@ -1,9 +1,20 @@
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/images/index/web-log.svg";
+import { useState, useEffect } from "react";
 
 function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  // Fermer le menu burger au changement de route
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className={`header-home ${!isHome ? "white-navbar" : ""}`}>
@@ -14,13 +25,18 @@ function Navbar() {
         </NavLink>
       </div>
 
-      {/* Burger menu (optionnel pour mobile) */}
-      <button className="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      {/* Menu burger */}
+      <button
+        className="menu-toggle"
+        onClick={toggleMenu}
+        aria-label="Ouvrir le menu"
+        aria-expanded={isMenuOpen}
+      >
         &#9776;
       </button>
 
       {/* Navigation */}
-      <nav className="navigation-bar">
+      <nav className={`navigation-bar ${isMenuOpen ? "active" : ""}`}>
         <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
           ACCUEIL
         </NavLink>
@@ -35,15 +51,21 @@ function Navbar() {
         </NavLink>
       </nav>
 
-      {/* Recherche */}
+      {/* Barre de recherche ou lien mail */}
       <div className="search-form">
         <label htmlFor="search-input" className="visually-hidden">Rechercher</label>
-        <input
-          type="text"
-          id="search-input"
-          placeholder="🔍 RECHERCHER"
-          aria-label="Rechercher"
-        />
+        {isHome ? (
+          <input
+            type="text"
+            id="search-input"
+            placeholder="🔍 RECHERCHER"
+            aria-label="Rechercher"
+          />
+        ) : (
+          <a href="mailto:medfc@yahoo.fr" className="work-with-me">
+            Rejoignez-nous!
+          </a>
+        )}
       </div>
     </header>
   );

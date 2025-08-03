@@ -4,6 +4,9 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import './assets/style.css';
 import './assets/responsive.css';
+import './assets/cookieconsent.css';
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

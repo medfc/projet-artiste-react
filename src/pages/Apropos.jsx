@@ -1,10 +1,7 @@
-import "../assets/Apropos.css";
+import "../assets/apropos.css";
 import MapEtFormulaire from "../components/MapEtFormulaire";
 import ScrollingText from "../components/ScrollingText";
 import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
-
-
-
 
 
 
@@ -20,37 +17,38 @@ function Apropos() {
 
       <div className="apropos-container">
         <div className="box">
-          <h2>150+</h2>
+          <h3>150+</h3>
           <h3>Séances Réalisées</h3>
           <p>Portraits, mariages, événements et shootings professionnels capturant l’essence de chaque instant.</p>
         </div>
         <div className="box">
-          <h2>30K+</h2>
+          <h3>30K+</h3>
           <h3>Photos Capturées</h3>
           <p>Chaque cliché raconte une histoire unique, immortalisant des souvenirs inoubliables.</p>
         </div>
         <div className="box">
-          <h2>98%</h2>
-          <h3>Clients Satisfaits</h3>
+          <h3>98%</h3>
+          <h3>De Clients Satisfaits</h3>
           <p>Un accompagnement personnalisé pour garantir des photos authentiques et émouvantes.</p>
         </div>
       </div>
 
+
       <section className="key-figures">
-        <h2>Chiffres Clés</h2>
+        <h3>Chiffres Clés</h3>
         <div className="stats">
-          <div><h3>100+</h3><p>Œuvres photographiques</p></div>
-          <div><h3>20</h3><p>Expositions internationales</p></div>
-          <div><h3>5</h3><p>Pays où les œuvres ont été exposées</p></div>
+          <div><h4>100+</h4><p>Œuvres photographiques</p></div>
+          <div><h4>20</h4><p>Expositions internationales</p></div>
+          <div><h4>5</h4><p>Pays où les œuvres ont été exposées</p></div>
         </div>
       </section>
 
       <section className="expositions">
-        <h2>Expositions & Événements</h2>
+        <h3>Expositions & Événements</h3>
         <div className="event-list">
-          <div className="event"><h3>Exposition Lumières Urbaines</h3><p>📍 Paris, France – Avril 2025</p></div>
-          <div className="event"><h3>Festival de la Photographie Contemporaine</h3><p>📍 Berlin, Allemagne – Juin 2025</p></div>
-          <div className="event"><h3>Rétrospective Photographique</h3><p>📍 New York, USA – Septembre 2025</p></div>
+          <div className="event"><h4>Exposition Lumières Urbaines</h4><p>📍 Paris, France – Avril 2025</p></div>
+          <div className="event"><h4>Festival de la Photographie Contemporaine</h4><p>📍 Berlin, Allemagne – Juin 2025</p></div>
+          <div className="event"><h4>Rétrospective Photographique</h4><p>📍 New York, USA – Septembre 2025</p></div>
         </div>
       </section>
       <MapEtFormulaire />

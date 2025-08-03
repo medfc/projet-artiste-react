@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../assets/Portfolio.css";
+import "../assets/portfolio.css";
 import { fetchPortfolioData } from "../api/portfolioApi";
 import GallerySection from "../components/GallerySection";
 import ScrollingText from "../components/ScrollingText";

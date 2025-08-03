@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Apropos from './pages/Apropos';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import CookieConsent from './components/CookieConsent';
+
 
 function App() {
   return (
@@ -13,12 +15,16 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/accueil" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/a-propos" element={<Apropos />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+
         </Routes>
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

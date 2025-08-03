@@ -1,4 +1,4 @@
-import "../assets/Contact.css";
+import "../assets/contact.css";
 import MapEtFormulaire from "../components/MapEtFormulaire";
 import ScrollingText from "../components/ScrollingText";
 import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";

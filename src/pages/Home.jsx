@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import useAutoPlayWhenVisible from "../hooks/useAutoPlayWhenVisible";
 import portraitArtiste from "../assets/images/index/portrait-artiste.webp";
 import portraitAccueil from "../assets/images/index/portrait-acceuil.webp";
@@ -15,7 +17,7 @@ import videoPoster from "../assets/video/video-mariage-poster.jpg";
 import videoFile from "../assets/video/video-mariage.mp4";
 import ScrollingText from "../components/ScrollingText";
 import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
-
+import "../assets/style.css";
 
 
 function Home() {
@@ -52,7 +54,10 @@ function Home() {
             <p>
               Je suis Alban Kevin, photographe passionné spécialisé dans les portraits et la photographie urbaine. Mon objectif est de capturer des moments authentiques et de révéler la beauté cachée du quotidien.
             </p>
-            <a href="portfolio.html" className="button" aria-label="Voir les projets du portfolio">Voir mon travail</a>
+            <Link to="/portfolio" className="button" aria-label="Voir les projets du portfolio">
+            Voir mon travail
+            </Link>
+
           </div>
           <img src={portraitArtiste} alt="portrait de l’artiste" />
         </article>
@@ -67,28 +72,29 @@ function Home() {
               <img src={portraitAccueil} alt="portrait" />
               <div className="description">
                 <h3>Portraits</h3>
-                <a href="portfolio.html#anchor-portrait" aria-label="Voir les détails des portraits">VOIR EN DETAIL →</a>
+                <HashLink to="/portfolio#anchor-portrait" smooth aria-label="Voir les détails des portraits"> VOIR EN DETAIL → </HashLink>
               </div>
             </div>
             <div className="realisation-box">
               <img src={voyageAccueil} alt="portrait" />
               <div className="description">
                 <h3>Photographie de voyage</h3>
-                <a href="portfolio.html#anchor-trip" aria-label="Voir les détails des portraits">VOIR EN DETAIL →</a>
+                <HashLink to="/portfolio#anchor-trip" smooth aria-label="Voir les détails des portraits"> VOIR EN DETAIL → </HashLink>
+
               </div>
             </div>
             <div className="realisation-box">
               <img src={modeAccueil} alt="portrait" />
               <div className="description">
                 <h3>Mode & Editorial</h3>
-                <a href="portfolio.html#anchor-editorial" aria-label="Voir les détails des portraits">VOIR EN DETAIL→</a>
+                <HashLink to="/portfolio#anchor-editorial" smooth aria-label="Voir les détails des portraits"> VOIR EN DETAIL → </HashLink>
               </div>
             </div>
             <div className="realisation-box">
               <img src={reportageAccueil} alt="portrait" />
               <div className="description">
-                <h3>Reportages / événements</h3>
-                <a href="portfolio.html#anchor-event" aria-label="Voir les détails des portraits">VOIR EN DETAIL →</a>
+                <h3>Reportages / Evénements</h3>
+                <HashLink to= "/portfolio#anchor-event" smooth arial-label="Voir les details des portraits"> VOIR EN DETAIL → </HashLink>
               </div>
             </div>
           </div>
@@ -114,7 +120,7 @@ function Home() {
         </section>
 
         <div className="presentation-video">
-          <video ref={videoRef} id="video" className="presentation" controls width="800" height="450" loading="lazy" poster={videoPoster} muted playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}>
+          <video ref={videoRef} id="video" controls loading="lazy" poster={videoPoster} muted playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}>
             <source src={videoFile} type="video/mp4" />
             Votre navigateur ne supporte pas la lecture de cette vidéo.
           </video>
@@ -135,7 +141,8 @@ function Home() {
         <section className="talk-with-us">
           <h2> Créons quelque chose de grand !</h2>
           <p> Nous vous faisons passer de la réalité d'aujourd'hui au potentiel de demain </p>
-          <a href="contact.html" className="button">Nous parler de votre projet</a>
+          <Link to="/contact" className="button" aria-label="Aller à la page Contact"> Nous parler de votre projet </Link>
+
         </section>
       </main>
     </div>

@@ -2,6 +2,7 @@ import facebook from "../assets/images/index/facebook.png";
 import instagram from "../assets/images/index/instagram.png";
 import twitter from "../assets/images/index/twitter.png";
 import dribbble from "../assets/images/index/reseau-social.png";
+import { Link } from 'react-router-dom'
 
 
 
@@ -49,9 +50,9 @@ function Footer() {
         <aside className="links">
           <h3>Liens</h3>
           <ul>
-            <li><a href="/portfolio.html">Portfolio</a></li>
-            <li><a href="/apropos.html">À propos</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/a-propos">À propos</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </aside>
       </div>
