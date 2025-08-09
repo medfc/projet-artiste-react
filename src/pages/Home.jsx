@@ -59,7 +59,9 @@ function Home() {
             </Link>
 
           </div>
-          <img src={portraitArtiste} alt="portrait de l’artiste" />
+          <img src={portraitArtiste} alt="portrait de l'artiste" loading="eager" decoding="sync"/>
+
+
         </article>
 
         <ScrollingText />
