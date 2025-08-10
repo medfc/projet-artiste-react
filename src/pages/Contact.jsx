@@ -39,10 +39,10 @@ function Contact() {
         </div>
       </section>
 
-    <MapEtFormulaire />
+      <MapEtFormulaire />
 
 
-    <ScrollingText />
+      <ScrollingText />
 
     </main>
   );

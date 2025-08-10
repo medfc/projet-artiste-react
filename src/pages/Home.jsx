@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import useAutoPlayWhenVisible from "../hooks/useAutoPlayWhenVisible";
-import portraitArtiste from "../assets/images/index/portrait-artiste.webp";
 import portraitAccueil from "../assets/images/index/portrait-acceuil.webp";
 import voyageAccueil from "../assets/images/index/voyage-acceuil.webp";
 import modeAccueil from "../assets/images/index/mode-acceuil.webp";
@@ -18,6 +17,8 @@ import videoFile from "../assets/video/video-mariage.mp4";
 import ScrollingText from "../components/ScrollingText";
 import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
 import "../assets/style.css";
+import portraitArtiste from "../assets/images/index/portrait-artiste.webp";
+
 
 
 function Home() {
@@ -59,7 +60,14 @@ function Home() {
             </Link>
 
           </div>
-          <img src={portraitArtiste} alt="portrait de l'artiste" loading="eager" decoding="sync"/>
+            <img
+              src={portraitArtiste}
+              alt="Portrait de l’artiste"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              className="presentation__img"
+            />
 
 
         </article>

@@ -33,15 +33,14 @@ projet-artiste-react/
 │   ├── data/
 │   ├── hooks/  
 │   ├── pages/             // Home, Contact, Portfolio, Apropos
-│   ├── tests/
-│   ├── pages/  
-│   ├── pages/    
-│   ├── main.jsx/   
-│   └── App.jsx/   
-├── index.html/  
+│   ├── tests/   
+│   ├── main.jsx  
+│   └── App.jsx
+├── index.html  
 ├── package-lock.json
 ├── package.json
 ├── vite.config.js
+├── guide_utilisateur.txt
 └── README.md
 ```
 
