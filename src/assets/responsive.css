@@ -1,0 +1,775 @@
+@media (max-width: 1024px) {
+
+    h1 {
+        font-size: 2.5rem ;
+    }
+    h2 {
+
+        font-size: 2.25rem;
+        padding: 0px 20px;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1.375rem;
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 50px;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+    
+    .white-navbar .menu-toggle {
+    color: #000 !important;
+    }
+
+
+    .header-home .menu-toggle {
+        color: white;
+    }
+    
+    a.work-with-me {
+        font-size: 0.95rem;
+    }
+  
+    header .navigation-bar {
+        display: none; /* Caché par défaut */
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        width: 150px; 
+        gap:10px; 
+        padding: 0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+
+   .navigation-bar.active {
+        display: flex !important;
+        opacity: 1;
+      
+    }
+
+
+
+  
+    .navigation-bar a {
+        width: 100%; 
+        text-align: center;
+        padding: 10px 0;
+        color: black;
+        font-weight: bold;
+    }
+    
+
+    header {
+    gap:230px;
+    align-items: center;
+    padding: 5px 0px;
+    max-width: 100%;
+ 
+
+    }
+  
+
+    .search-form input {
+        width: 120px;
+    }
+
+    .portfolio-container {
+        grid-template-columns:repeat(2,350px);
+        gap:20px
+    }
+    
+
+
+    .video-container video, .portfolio-container img {
+
+        width:100%;
+        height: 250px;
+    }
+
+    .portfolio-container h3 {
+        margin:0;
+        
+    }
+
+   
+    
+    .introduction p{
+        margin: 0;
+    }
+
+
+    .introduction {
+        gap:0px;
+        width:60%;
+    }
+
+    .introduction h1 {
+        
+        text-align: center;
+        margin: 20px;
+
+    }
+
+    .introduction span {
+        margin-left:0px;
+    }
+
+    .presentation img {
+        width: 30%;
+        object-fit: contain;
+    }
+
+    .introduction p{
+        width:80%;
+        margin-bottom:20px;
+    }
+
+
+    .introduction button{
+
+        margin-top: 20px;
+    }
+
+
+
+    .publications{
+        width: 75%;
+    }
+
+  
+
+    .form-container button {
+       
+        width:80%;
+    }
+
+
+    .welcome-banner {
+        height: 250px;
+    }
+
+
+
+
+
+    .map-form {
+       
+        width: 90%;
+    
+    }
+    .google-map {
+        width:100%;
+        height: 50%;
+    }
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    
+  h1 { font-size: 1.6rem; }         /* 25.6px */
+  h2 { font-size: 1.3rem; }         /* 20.8px */
+  h3 { font-size: 1.1rem; }         /* 17.6px */
+  h4 { font-size: 1rem; }           /* 16px */
+  body, p { font-size: 0.9rem; }    /* 14.4px */
+
+   .header-home, .header-rest {
+        gap:40px;
+        padding: 10px 10px;
+
+    }
+    a.work-with-me {
+    font-size: 0.875rem;
+    }
+
+    .logo img {
+        width: 30px;
+
+    }
+
+    .search-form input {
+        font-size: 0.875rem;
+    }
+
+    .menu-toggle {
+      
+        font-size: 35px;
+       
+    }
+    .logo img {
+        width: 35px;
+
+    }
+
+       
+    .introduction .button, .talk-with-us .button{
+
+        padding: 10px;
+        margin: 10px 0px;
+     }
+
+     .introduction h2 {
+        padding-bottom: 10px;
+     }
+
+    .description{
+        white-space: nowrap;
+    }
+
+    .search-form input {
+        width: 120px;
+    }
+
+    .navigation-bar  {
+       font-size: 15px;
+        
+    }
+
+    .presentation img {
+        width: 40%;
+     
+    }
+
+    .slide img {
+      width: 90%;
+    
+    }
+
+
+
+    .publications{
+       
+        width: 80%;
+        font-size: 0.9375rem;
+   
+    } 
+
+    .role {
+        
+        font-size: 0.9375rem;
+        font-weight: lighter;
+      
+    }
+    .year {
+        text-align: center;
+    }
+
+    .presentation-video video {
+        width: 80%;
+        height: 400px;
+       
+    }
+
+    .presentation {
+
+        flex-direction: column;
+        gap:10px;
+        height: 400%;
+    
+    }
+
+
+    .introduction {
+        width:90%;
+    }
+
+    .description h4{
+        margin: 0;
+    }
+
+    .realisation-grid {
+        grid-template-columns:  1fr;
+        min-width: 200px;
+    }
+
+    .realisation-box  {
+      
+        margin: auto;
+    }
+
+
+   
+    .publications {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .role {
+        width:90%;
+        text-align: center;
+    }
+
+    .collaboration-table caption {
+        font-size: 24px;
+    }
+    .presentation-video video {
+        width: 90%;
+        height: 400px;
+       
+    }
+
+    .collaboration-table{
+        width:80%;
+        margin: auto;
+        margin-bottom: 20px;
+    } 
+
+    .talk-with-us {
+        text-align: center ;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+   
+    .talk-with-us p {
+        padding: 0px 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .newsletter-contact {
+        width:100%;
+    }
+
+    
+    .links {
+        align-items:flex-start;
+        gap:0;
+        margin-top: 10px;
+
+    }
+    
+    .links ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+    }
+   
+    .contact p {
+       
+        margin-bottom: 0px;
+    }
+    .portfolio-container {
+        grid-template-columns:repeat(1,450px);
+        justify-content: center;
+        margin-bottom: 50px;
+     
+    }
+      .video-container video, .portfolio-container img {
+
+        height: 300px;
+    }
+
+    .fullscreen {
+ 
+        max-width: 80vw;
+        width: 80%;
+       
+ 
+    }
+    .portfolio-total {
+        scroll-behavior: smooth;
+    }
+    
+    
+    .map-form {
+
+        flex-direction: column;
+        width: 70%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+     
+      
+      
+        
+    }
+    .map-container {
+    
+        width: 100%;
+   
+    }
+
+    .google-map{
+
+        height: 200px;
+        
+ 
+    }
+
+    .form-container  {
+        width: 100%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }  
+
+    
+    .introduction p {
+        font-size: 0.875rem;
+    }
+
+
+
+  .contact-info {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+    .contact-box {
+        width: 70%;
+        min-width: 200px;
+        max-width: 350px;
+    }
+
+
+    .collaboration-table caption {
+        font-size: 1.3rem;
+    }
+
+
+    #portfolio-banner {
+        background-image: url('images/portfolio/banner-portfolio_768.webp');
+    } 
+    #contact-banner {
+        background-image: url('images/contact/background-contact_768.webp');
+    }
+    #apropos-banner {
+        background-image: url('images/a-propos/background-a-propos_768.webp');
+    }
+
+    .welcome-banner h2 {
+        font-size: 2rem;
+
+    }
+
+    .welcome-banner {
+        height: 200px;
+    }
+    
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 478px) {
+
+
+    .portfolio-container {
+        grid-template-columns:repeat(1,350px);
+        justify-content: center;
+     
+    }
+    .video-container video, .portfolio-container img {
+
+        height: 200px;
+    }
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 430px){
+
+
+    .description  {
+   
+       white-space: wrap;
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 390px) {
+
+ 
+
+     .header-home, .header-rest {
+        gap:5px;
+    }
+
+    
+    .logo img {
+        width: 30px;
+
+    }
+
+    .search-form input {
+        width: 120px;
+        font-size: 0.875rem;
+    }
+
+  
+    .menu-toggle {
+      
+        font-size: 30px;
+       
+    }
+
+    .portfolio-container {
+        grid-template-columns:repeat(1,250px);
+        
+     
+    } 
+      .video-container video, .portfolio-container img {
+
+        height: 150px;
+    }
+
+    .form-container button {
+        white-space: wrap;
+    }
+    
+    .contact-box h3 , .contact-box p {
+        margin: 0;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 320px) {
+
+    h1 { font-size: 1.4rem; }         /* 22.4px */
+    h2 { font-size: 1.2rem; }         /* 19.2px */
+    h3 { font-size: 1rem; }           /* 16px */
+    h4 { font-size: 0.95rem; }        /* 15.2px */
+    body, p, .collaboration-table { font-size: 0.875rem; }  /* 14px */
+
+    #portfolio-banner {
+        background-image: url('images/portfolio/banner-portfolio_320.webp');
+    }
+    #contact-banner {
+        background-image: url('images/contact/background-contact_320.webp');
+    }
+    #apropos-banner {
+        background-image: url('images/a-propos/background-a-propos_320.webp');
+    }
+
+    .welcome-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-banner {
+        height: 150px;
+      
+    }
+
+    .cookie-banner {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .cookie-banner p {
+        margin: 10px;
+    }
+
+
+    .realisation h2 {
+        text-align: center;
+    }
+
+
+    .introduction .button, .talk-with-us .button, #scrolling-text {
+ 
+    font-size: 14px;
+  
+    }
+
+    .presentation img {
+        width: 50%;
+     
+    }
+
+    .slide img {
+      width: 95%;
+    
+    }npm run build
+
+    .overview-portfolio h2 {
+
+      margin-bottom: 40px;
+
+    }
+ 
+
+    .collaboration-table caption {
+        font-size: 1.2rem;
+    }
+
+    #video {
+      width: 100%;  
+    }
+
+
+
+    .form-container input, .form-container textarea {
+        font-size: 14px;
+    }
+
+
+    .footer-line {
+     margin: 0
+    }
+
+    .navigation-bar  {
+       font-size: 14px;
+        
+    }
+
+}
