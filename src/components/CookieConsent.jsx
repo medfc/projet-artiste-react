@@ -20,6 +20,7 @@ export default function CookieConsent() {
     document.body.classList.remove('block-all');
     setIsVisible(false);
     preloadImagesLCP();
+    window.dispatchEvent(new Event('consent-accepted'));
   };
 
   return (

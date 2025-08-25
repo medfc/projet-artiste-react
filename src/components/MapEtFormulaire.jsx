@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"; // ← AJOUT
 import { useFormInput } from "../hooks/useFormInput";
 
 function MapEtFormulaire() {
@@ -6,19 +7,59 @@ function MapEtFormulaire() {
   const site = useFormInput("");
   const message = useFormInput("");
 
+  // ← AJOUT : état basé sur le consentement
+  const [allowed, setAllowed] = useState(
+    localStorage.getItem("cookiesAccepted") === "true"
+  );
+
+  useEffect(() => {
+    // ← AJOUT : écoute le signal global "consent-accepted"
+    const onConsent = () => setAllowed(true);
+    window.addEventListener("consent-accepted", onConsent);
+
+    // ← AJOUT : écoute un éventuel changement du localStorage (autre onglet)
+    const onStorage = (e) => {
+      if (e.key === "cookiesAccepted" && e.newValue === "true") setAllowed(true);
+    };
+    window.addEventListener("storage", onStorage);
+
+    return () => {
+      window.removeEventListener("consent-accepted", onConsent);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
+
   return (
     <section className="map-form">
       <div className="map-container">
-        <iframe
-          className="google-map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5365.0909551784835!2d7.349444265051269!3d47.75147302702019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47919b9a1bd0892d%3A0xea12a13c14e19065!2s16%20Rue%20de%20l'%C3%8Ele%20Napol%C3%A9on%2C%2068100%20Mulhouse!5e0!3m2!1sfr!2sfr!4v1741779724297!5m2!1sfr!2sfr"
-          title="Google Map"
-          width="100%"
-          height="100%"
-          style={{ border: 0, borderRadius: "10px" }}
-          loading="lazy"
-          allowFullScreen
-        ></iframe>
+        {allowed ? (
+          // ← AJOUT : IFRAME UNIQUEMENT APRÈS CONSENTEMENT
+          <iframe
+            className="google-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5365.0909551784835!2d7.349444265051269!3d47.75147302702019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47919b9a1bd0892d%3A0xea12a13c14e19065!2s16%20Rue%20de%20l'%C3%8Ele%20Napol%C3%A9on%2C%2068100%20Mulhouse!5e0!3m2!1sfr!2sfr!4v1741779724297!5m2!1sfr!2sfr"
+            title="Google Map"
+            width="100%"
+            height="100%"
+            style={{ border: 0, borderRadius: "10px" }}
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          // ← AJOUT : placeholder neutre (aucun cookie tiers)
+          <div
+            className="map-placeholder"
+            style={{ border: "1px solid #ddd", padding: 16, textAlign: "center", borderRadius: 10 }}
+          >
+            <p>La carte Google Maps sera affichée après acceptation des cookies.</p>
+            <a
+              href="https://maps.google.com/?q=16+Rue+de+l%27%C3%8Ele+Napol%C3%A9on,+68100+Mulhouse"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ouvrir l’itinéraire dans Google Maps
+            </a>
+          </div>
+        )}
       </div>
 
       <div className="form-container">
@@ -28,7 +69,6 @@ function MapEtFormulaire() {
           ensemble.
         </p>
         <form id="contactForm">
-          
           <input
             type="text"
             id="fullName"
@@ -40,8 +80,6 @@ function MapEtFormulaire() {
             title="Lettres seulement (accents OK), espaces/tirets/apostrophes autorisés."
             {...fullName}
           />
-
-          
           <input
             type="email"
             id="email"
@@ -50,8 +88,6 @@ function MapEtFormulaire() {
             title="Entrez une adresse e-mail valide."
             {...email}
           />
-
-          
           <input
             type="url"
             id="site"
@@ -60,8 +96,6 @@ function MapEtFormulaire() {
             title="Si renseigné, l'adresse doit commencer par http:// ou https://"
             {...site}
           />
-
-          
           <textarea
             id="message"
             placeholder="Comment puis-je vous aider ?"
@@ -71,7 +105,6 @@ function MapEtFormulaire() {
             title="Votre message doit contenir entre 10 et 1000 caractères."
             {...message}
           />
-
           <button type="submit" className="button">
             Envoyer Le Message
           </button>
