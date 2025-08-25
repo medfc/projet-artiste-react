@@ -1,20 +1,40 @@
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/images/index/web-log.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  // Fermer le menu burger au changement de route
+  // Fermer le menu au changement de route
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
+
+  // Fermer si clic à l'extérieur
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
   return (
     <header className={`header-home ${!isHome ? "white-navbar" : ""}`}>
@@ -27,6 +47,7 @@ function Navbar() {
 
       {/* Menu burger */}
       <button
+        ref={buttonRef}
         className="menu-toggle"
         onClick={toggleMenu}
         aria-label="Ouvrir le menu"
@@ -36,7 +57,10 @@ function Navbar() {
       </button>
 
       {/* Navigation */}
-      <nav className={`navigation-bar ${isMenuOpen ? "active" : ""}`}>
+      <nav
+        ref={menuRef}
+        className={`navigation-bar ${isMenuOpen ? "active" : ""}`}
+      >
         <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
           ACCUEIL
         </NavLink>
@@ -53,7 +77,9 @@ function Navbar() {
 
       {/* Barre de recherche ou lien mail */}
       <div className="search-form">
-        <label htmlFor="search-input" className="visually-hidden">Rechercher</label>
+        <label htmlFor="search-input" className="visually-hidden">
+          Rechercher
+        </label>
         {isHome ? (
           <input
             type="text"

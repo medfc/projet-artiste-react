@@ -28,34 +28,53 @@ function MapEtFormulaire() {
           ensemble.
         </p>
         <form id="contactForm">
+          
           <input
             type="text"
             id="fullName"
             placeholder="Votre Nom"
             required
+            minLength={2}
+            maxLength={50}
+            pattern="^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[ '-][A-Za-zÀ-ÖØ-öø-ÿ]+)*$"
+            title="Lettres seulement (accents OK), espaces/tirets/apostrophes autorisés."
             {...fullName}
           />
+
+          
           <input
             type="email"
             id="email"
             placeholder="Votre email"
             required
+            title="Entrez une adresse e-mail valide."
             {...email}
           />
+
+          
           <input
-            type="text"
+            type="url"
             id="site"
-            placeholder="Votre site"
-            required
+            placeholder="Votre site (optionnel)"
+            pattern="^https?://.+"
+            title="Si renseigné, l'adresse doit commencer par http:// ou https://"
             {...site}
           />
+
+          
           <textarea
             id="message"
             placeholder="Comment puis-je vous aider ?"
             required
+            minLength={10}
+            maxLength={1000}
+            title="Votre message doit contenir entre 10 et 1000 caractères."
             {...message}
           />
-          <button type="submit" className="button">Envoyer Le Message</button>
+
+          <button type="submit" className="button">
+            Envoyer Le Message
+          </button>
         </form>
       </div>
     </section>

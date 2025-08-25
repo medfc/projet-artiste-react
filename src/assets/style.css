@@ -357,14 +357,9 @@
 
 
     #portfolio-banner {
-      background-image: url('images/portfolio/banner-portfolio_1600.webp');
+      background-image: url('images/portfolio/banner-portfolio.webp');
     }
-    #contact-banner {
-      background-image: url('images/contact/background-contact_1600.webp');
-    }
-    #apropos-banner {
-      background-image: url('images/a-propos/background-a-propos_1600.webp');
-    }
+
 
 
     .welcome-banner {

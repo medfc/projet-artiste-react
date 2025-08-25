@@ -499,15 +499,6 @@
     }
 
 
-    #portfolio-banner {
-        background-image: url('images/portfolio/banner-portfolio_768.webp');
-    } 
-    #contact-banner {
-        background-image: url('images/contact/background-contact_768.webp');
-    }
-    #apropos-banner {
-        background-image: url('images/a-propos/background-a-propos_768.webp');
-    }
 
     .welcome-banner h2 {
         font-size: 2rem;
@@ -691,15 +682,7 @@
     h4 { font-size: 0.95rem; }        /* 15.2px */
     body, p, .collaboration-table { font-size: 0.875rem; }  /* 14px */
 
-    #portfolio-banner {
-        background-image: url('images/portfolio/banner-portfolio_320.webp');
-    }
-    #contact-banner {
-        background-image: url('images/contact/background-contact_320.webp');
-    }
-    #apropos-banner {
-        background-image: url('images/a-propos/background-a-propos_320.webp');
-    }
+
 
     .welcome-banner h2 {
         font-size: 1.5rem;
