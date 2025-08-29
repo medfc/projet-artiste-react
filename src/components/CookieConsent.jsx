@@ -8,7 +8,7 @@ export default function CookieConsent() {
 
     if (consentGiven) {
       document.body.classList.remove('block-all');
-      preloadImagesLCP();
+     
     } else {
       document.body.classList.add('block-all');
       setIsVisible(true);
@@ -19,7 +19,6 @@ export default function CookieConsent() {
     localStorage.setItem('cookiesAccepted', 'true');
     document.body.classList.remove('block-all');
     setIsVisible(false);
-    preloadImagesLCP();
     window.dispatchEvent(new Event('consent-accepted'));
   };
 
@@ -37,7 +36,3 @@ export default function CookieConsent() {
   );
 }
 
-// À adapter si tu veux déclencher des chargements différés
-function preloadImagesLCP() {
-  console.log('Images ou scripts différés peuvent être chargés ici.');
-}

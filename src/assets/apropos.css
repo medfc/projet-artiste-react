@@ -1,10 +1,9 @@
-/* A PROPOS PAGE */
 
+/* Haut de la page  */
 #apropos-banner {
   background-image: url(images/a-propos/background-a-propos.webp);
 }
 
-/* === Blocs chiffrés (haut de page) === */
 .apropos-container {
   display: flex;
   gap: 20px;
@@ -27,7 +26,7 @@
 }
 
 
-/* === Section Chiffres Clés === */
+/* Section Chiffres Clés  */
 .key-figures {
   text-align: center;
   background: white;
@@ -61,7 +60,7 @@
 }
 
 
-/* === Section Expositions & Événements === */
+/* Partie Expositions & Événements */
 .expositions {
   text-align: center;
   background: white;
@@ -104,12 +103,3 @@
 
 
 
-
-/* === Divers === */
-.header-rest {
-  gap: 70px;
-}
-
-.contact-info {
-  grid-template-columns: 1fr;
-}

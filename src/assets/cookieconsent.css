@@ -1,6 +1,6 @@
-/* === GESTION DES COOKIES – Blocage complet sans overlay === */
 
-/* Blocage total de l'interaction tant que l'utilisateur n’a pas accepté */
+
+/* Blocage total avant acceptation utilisateur */
 body.block-all {
   overflow: hidden;
   pointer-events: none;
@@ -13,19 +13,19 @@ body.block-all * {
   pointer-events: none;
 }
 
-/* Sauf pour la bannière cookies */
+/* activer les clics pour la banniere cookie */
 body.block-all .cookie-banner,
 body.block-all .cookie-banner * {
   pointer-events: auto !important;
 }
 
-/* Style visuel de la bannière */
+
 .cookie-banner {
   position: fixed;
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background-color: #f4f4f4;
+  background-color: #5fbd86;
   color: #333;
   padding: 15px;
   border-radius: 8px;

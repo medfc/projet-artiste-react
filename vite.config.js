@@ -8,8 +8,8 @@ export default defineConfig({
     port: 5173,
   },
   test: {
-    environment: 'jsdom', // ✅ c’est ce qu’il te manque
-    globals: true,         // optionnel mais utile si tu veux éviter les imports `describe`, etc.
-    exclude: [...configDefaults.exclude, 'node_modules'] // optionnel
+    environment: 'jsdom', 
+    globals: true,         
+    exclude: [...configDefaults.exclude, 'node_modules'] 
   }
 });

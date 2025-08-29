@@ -1,6 +1,6 @@
-// src/data/portfolioData.js
 
-// Imports images : Portraits
+
+/* Imports images : Portraits*/
 import prt1 from "../assets/images/portfolio/prt-1.webp";
 import prt2 from "../assets/images/portfolio/prt-2.webp";
 import prt3 from "../assets/images/portfolio/prt-3.webp";
@@ -8,7 +8,7 @@ import prt4 from "../assets/images/portfolio/prt-4.webp";
 import prt5 from "../assets/images/portfolio/prt-5.webp";
 import prt6 from "../assets/images/portfolio/prt-6.webp";
 
-// Imports images : Voyages
+/*Imports images : Voyages*/
 import voy1 from "../assets/images/portfolio/voy-1.webp";
 import voy2 from "../assets/images/portfolio/voy-2.webp";
 import voy3 from "../assets/images/portfolio/voy-3.webp";
@@ -16,7 +16,7 @@ import voy4 from "../assets/images/portfolio/voy-4.webp";
 import voy5 from "../assets/images/portfolio/voy-5.webp";
 import voy6 from "../assets/images/portfolio/voy-6.webp";
 
-// Imports images : Editorial
+/*Imports images : Editorial*/
 import mode1 from "../assets/images/portfolio/mode-1.webp";
 import mode2 from "../assets/images/portfolio/mode-2.webp";
 import mode3 from "../assets/images/portfolio/mode-3.webp";
@@ -24,19 +24,19 @@ import mode4 from "../assets/images/portfolio/mode-4.webp";
 import mode5 from "../assets/images/portfolio/mode-5.webp";
 import mode6 from "../assets/images/portfolio/mode-6.webp";
 
-// Imports images : Événement
+/*Imports images : Événement*/
 import eve1 from "../assets/images/portfolio/eve-1.webp";
 import eve2 from "../assets/images/portfolio/eve-2.webp";
 import eve3 from "../assets/images/portfolio/eve-3.webp";
 import eve4 from "../assets/images/portfolio/eve-4.webp";
 
-// Vidéos
+/*Vidéos*/
 import mariageVideo from "../assets/video/mariage-2.mp4";
 import mariagePoster from "../assets/video/mariage-2-poster.jpg";
 import anniversaireVideo from "../assets/video/anniversaire.mp4";
 import anniversairePoster from "../assets/video/anniversaire-poster.jpg";
 
-// Données structurées
+
 export const portfolioData = {
   portrait: [
     { image: prt1, title: "Évasion naturelle", description: "Un instant suspendu en pleine nature, où la lumière caresse délicatement le visage du modèle, reflétant une sensation de liberté et d’harmonie." },

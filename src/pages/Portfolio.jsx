@@ -9,7 +9,6 @@ import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
 function Portfolio() {
   useScrollToTopOnMount();
 
-  // 🔧 Tu ajoutes ceci ici :
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -22,7 +21,6 @@ function Portfolio() {
         <h2>Portfolio</h2>
       </div>
 
-      {/* ✅ Tu affiches seulement si les données sont chargées */}
       {data && (
         <>
           <GallerySection

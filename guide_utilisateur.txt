@@ -1,4 +1,4 @@
-# 📖 Guide Utilisateur — Site Artiste (React)
+# Guide Utilisateur — Site Artiste (React)
 
 Ce site a été conçu pour présenter le travail d’un photographe professionnel de manière simple, fluide et immersive.  
 Il a été optimisé conformément au cahier des charges pour un usage **desktop**.  
@@ -6,7 +6,7 @@ La version mobile est également responsive, bien que non exigée.
 
 ---
 
-## 🌐 Navigation générale
+## Navigation générale
 
 Le site comporte 4 pages principales, accessibles via la barre de navigation ou le menu burger sur mobile :
 
@@ -17,7 +17,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## 🏠 Page d’accueil
+## Page d’accueil
 
 - Présentation texte placée en haut de page.
 - Texte défilant dynamique.
@@ -27,7 +27,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## 🖼️ Page Portfolio
+## Page Portfolio
 
 - Affichage dynamique via API locale (JSON).
 - Présentation en grille responsive.
@@ -36,7 +36,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## 👤 Page À propos
+## Page À propos
 
 - Biographie illustrée.
 - Carte Google Maps du studio.
@@ -45,7 +45,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## 📬 Page Contact
+## Page Contact
 
 - Adresse avec lien d’itinéraire.
 - Email et téléphone cliquables.
@@ -55,7 +55,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## ⚙️ Fonctionnalités techniques
+## Fonctionnalités techniques
 
 - SPA développée avec **React + Vite**.
 - Navigation fluide via **React Router**.
@@ -66,7 +66,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## 💻 Compatibilité
+## Compatibilité
 
 - Navigateurs testés : Chrome, Firefox (versions récentes).
 - Appareils : Desktop (principal), Tablette, Mobile.
@@ -74,14 +74,14 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## ⌨️ Raccourcis utiles
+## Raccourcis utiles
 
 - **Échap** : fermer la lightbox.
 - **← / →** : naviguer entre médias.
 
 ---
 
-## ❓ FAQ rapide
+## FAQ rapide
 
 - **Image qui ne s’ouvre pas ?** → Rechargez la page et réessayez.
 - **Formulaire bloqué ?** → Vérifiez les champs obligatoires.
@@ -89,7 +89,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## 💡 Conseils pratiques
+## Conseils pratiques
 
 - Cliquez sur une image pour l’agrandir.
 - Utilisez “Envoyer un message” pour contacter l’artiste.
@@ -98,7 +98,7 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ---
 
-## 📜 Crédits et mentions
+## Crédits et mentions
 
 Ce site a été réalisé dans le cadre d’un projet de certification RNCP Développeur Front-End.  
 Contenu fictif ou utilisé à des fins de démonstration.

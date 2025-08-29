@@ -4,6 +4,6 @@
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(portfolioData);
-      }, 500); // délai pour simuler un appel réseau
+      }, 500); // pour simuler un appel réseau
     });
   }

@@ -1,4 +1,4 @@
-// src/components/GallerySection.jsx
+
 import React, { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";

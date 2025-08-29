@@ -14,12 +14,12 @@ function Navbar() {
     setIsMenuOpen((prev) => !prev);
   };
 
-  // Fermer le menu au changement de route
+  // fermeture du menu au changement de route
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  // Fermer si clic à l'extérieur
+  // si un clique, fermeture
   useEffect(() => {
     function handleClickOutside(e) {
       if (

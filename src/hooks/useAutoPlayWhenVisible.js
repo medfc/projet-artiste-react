@@ -9,12 +9,12 @@ export default function useAutoPlayWhenVisible(videoRef) {
       ([entry]) => {
         if (entry.isIntersecting) {
           video.play().catch(() => {
-            // Si l’autoplay est bloqué (navigateur), on ne fait rien
+           
           });
         }
       },
       {
-        threshold: 0.5, // au moins 50% visible
+        threshold: 0.5,  /* visibilité 50% mini*/
       }
     );
 

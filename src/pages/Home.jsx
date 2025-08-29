@@ -41,7 +41,7 @@ function Home() {
   const handlePlay = () => {
     if (videoRef.current) {
       videoRef.current.play();
-      setIsPlaying(true); // Masquer le bouton Play
+      setIsPlaying(true); // Masquage du bouton Play
     }
   };
 

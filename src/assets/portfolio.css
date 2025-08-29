@@ -1,17 +1,7 @@
-.header-rest, .header-contact {
-    background-color: white;
-}
 
-.header-rest .navigation-bar a, .header-contact .navigation-bar a {
-    margin-right: 45px;
-}
-
-.header-rest a, .header-contact a {
-    color: black;
-}
 
 #anchor-portrait, #anchor-event, #anchor-trip, #anchor-editorial {
-    scroll-margin-top: 100px; /* Ajuste la marge pour que le titre soit bien visible */
+    scroll-margin-top: 100px; /* pour tomber directement sur le titre concerné */
     padding: 0px 10px;
 }
 
@@ -52,13 +42,11 @@
     margin-top: 0px;
 }
 
-/* Images normales */
-.portfolio-container img {
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
 
-/* === Cadre vidéo pour Play centré === */
+
+
+/* Partie video */
+
 .video-frame {
     position: relative;
     width: 100%;

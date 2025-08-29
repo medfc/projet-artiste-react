@@ -1,4 +1,3 @@
-import React from 'react'
 import { useImageSlider } from '../hooks/useImageSlider'
 
 export default function Carousel({ images, interval = 4000 }) {
