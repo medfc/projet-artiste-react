@@ -1,27 +1,51 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import "../assets/portfolio.css";
 import { fetchPortfolioData } from "../api/portfolioApi";
 import GallerySection from "../components/GallerySection";
 import ScrollingText from "../components/ScrollingText";
 import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
 
-
 function Portfolio() {
   useScrollToTopOnMount();
 
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchPortfolioData().then(setData);
+    fetchPortfolioData()
+      .then((portfolio) => {
+        setData(portfolio);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Erreur lors du chargement des données :", err);
+        setError("Impossible de charger le portfolio pour le moment.");
+        setLoading(false);
+      });
   }, []);
 
   return (
     <main>
+      <Helmet>
+        <title>Portfolio - Photographe Alban Kevin</title>
+        <meta
+          name="description"
+          content="Découvrez le portfolio d'Alban Kevin : portraits, voyages, photographies éditoriales et reportages d'événements capturant des moments uniques."
+        />
+      </Helmet>
+
       <div id="portfolio-banner" className="welcome-banner">
         <h2>Portfolio</h2>
       </div>
 
-      {data && (
+      {/* Gestion du chargement et des erreurs */}
+      {loading && <p className="loading-text">Chargement en cours...</p>}
+      {error && <p className="error-text">{error}</p>}
+
+      {/* Affichage principal uniquement si les données sont prêtes */}
+      {!loading && !error && data && (
         <>
           <GallerySection
             id="anchor-portrait"

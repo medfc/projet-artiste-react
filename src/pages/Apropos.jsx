@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import "../assets/apropos.css";
 import MapEtFormulaire from "../components/MapEtFormulaire";
 import ScrollingText from "../components/ScrollingText";
@@ -11,6 +12,14 @@ function Apropos() {
 
   return (
     <main>
+      
+      <Helmet>
+        <title>À propos - Photographe Alban Kevin</title>
+        <meta
+          name="description"
+          content="Découvrez le parcours d'Alban Kevin, photographe professionnel spécialisé dans les portraits, mariages, voyages et reportages."
+        />
+      </Helmet>
       <div id="apropos-banner" className="welcome-banner">
         <h2>À propos</h2>
       </div>

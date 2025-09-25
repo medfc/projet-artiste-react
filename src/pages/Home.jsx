@@ -1,35 +1,27 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
-import useAutoPlayWhenVisible from "../hooks/useAutoPlayWhenVisible";
-import portraitAccueil from "../assets/images/index/portrait-acceuil.webp";
-import voyageAccueil from "../assets/images/index/voyage-acceuil.webp";
-import modeAccueil from "../assets/images/index/mode-acceuil.webp";
-import reportageAccueil from "../assets/images/index/reportage-acceuil.webp";
-import portrait from "../assets/images/index/portrait.webp";
-import mariage from "../assets/images/index/mariage.webp";
-import voyage from "../assets/images/index/voyage.webp";
-import paysageUrbain from "../assets/images/index/paysage-urbain.webp";
-import mariage2 from "../assets/images/index/marriage-2.webp";
-import shooting from "../assets/images/index/shooting.webp";
-import videoPoster from "../assets/video/video-mariage-poster.jpg";
-import videoFile from "../assets/video/video-mariage.mp4";
-import ScrollingText from "../components/ScrollingText";
+import { HashLink } from "react-router-hash-link";
+import { Helmet } from "react-helmet-async";
 import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
+import ScrollingText from "../components/ScrollingText";
 import "../assets/style.css";
-import portraitArtiste from "../assets/images/index/portrait-artiste.webp";
-
-
 
 function Home() {
   useScrollToTopOnMount();
-  const images = [portrait, mariage, voyage, paysageUrbain, mariage2, shooting];
+  const images = [
+    "/images/index/portrait.webp",
+    "/images/index/mariage.webp",
+    "/images/index/voyage.webp",
+    "/images/index/paysage-urbain.webp",
+    "/images/index/marriage-2.webp",
+    "/images/index/shooting.webp"
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef(null);
-  useAutoPlayWhenVisible(videoRef);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Défilement automatique toutes les 3 secondes
+  // Défilement automatique du slider toutes les 3 secondes
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -38,82 +30,129 @@ function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true); // Masquage du bouton Play
-    }
-  };
+  // Gestion Safari : forcer muted et playsInline
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+
+    v.muted = true;
+    v.playsInline = true;
+    v.setAttribute("muted", "");
+    v.setAttribute("playsinline", "");
+  }, []);
 
   return (
     <div>
+      <Helmet>
+        <title>Accueil - Photographe Alban Kevin</title>
+        <meta
+          name="description"
+          content="Découvrez l'univers photographique d'Alban Kevin : portraits, mariages, voyages et reportages. Chaque couleur raconte une histoire."
+        />
+      </Helmet>
+
       <main>
+        {/* Section de présentation */}
         <article className="presentation">
           <div className="introduction">
-            <h1>Chaque couleur <br /><span>raconte une histoire</span></h1>
+            <h1>
+              Chaque couleur <br />
+              <span>raconte une histoire</span>
+            </h1>
             <h2>Introduction</h2>
             <p>
-              Je suis Alban Kevin, photographe passionné spécialisé dans les portraits et la photographie urbaine. Mon objectif est de capturer des moments authentiques et de révéler la beauté cachée du quotidien.
+              Je suis Alban Kevin, photographe passionné spécialisé dans les
+              portraits et la photographie urbaine. Mon objectif est de capturer
+              des moments authentiques et de révéler la beauté cachée du
+              quotidien.
             </p>
             <Link to="/portfolio" className="button" aria-label="Voir les projets du portfolio">
-            Voir mon travail
+              Voir mon travail
             </Link>
-
           </div>
-            <img
-              src={portraitArtiste}
-              alt="Portrait de l’artiste"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              className="presentation__img"
-            />
 
-
+          <img
+            src="/images/index/portrait-artiste.webp"
+            alt="Portrait de l’artiste"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            className="presentation__img"
+          />
         </article>
 
         <ScrollingText />
 
-
-        <section className="realisation"> 
+        {/* Section réalisations */}
+        <section className="realisation">
           <h2>Mon univers photographique captivant</h2>
           <div className="realisation-grid">
             <div className="realisation-box">
-              <img src={portraitAccueil} alt="portrait" />
+              <img src="/images/index/portrait-acceuil.webp" alt="portrait" />
               <div className="description">
                 <h3>Portraits</h3>
-                <HashLink to="/portfolio#anchor-portrait" smooth aria-label="Voir les détails des portraits"> VOIR EN DETAIL → </HashLink>
+                <HashLink
+                  to="/portfolio#anchor-portrait"
+                  smooth
+                  aria-label="Voir les détails des portraits"
+                >
+                  VOIR EN DETAIL →
+                </HashLink>
               </div>
             </div>
+
             <div className="realisation-box">
-              <img src={voyageAccueil} alt="portrait" />
+              <img src="/images/index/voyage-acceuil.webp" alt="voyage" />
               <div className="description">
                 <h3>Photographie de voyage</h3>
-                <HashLink to="/portfolio#anchor-trip" smooth aria-label="Voir les détails des portraits"> VOIR EN DETAIL → </HashLink>
-
+                <HashLink
+                  to="/portfolio#anchor-trip"
+                  smooth
+                  aria-label="Voir les détails des voyages"
+                >
+                  VOIR EN DETAIL →
+                </HashLink>
               </div>
             </div>
+
             <div className="realisation-box">
-              <img src={modeAccueil} alt="portrait" />
+              <img src="/images/index/mode-acceuil.webp" alt="mode" />
               <div className="description">
                 <h3>Mode & Editorial</h3>
-                <HashLink to="/portfolio#anchor-editorial" smooth aria-label="Voir les détails des portraits"> VOIR EN DETAIL → </HashLink>
+                <HashLink
+                  to="/portfolio#anchor-editorial"
+                  smooth
+                  aria-label="Voir les détails de la mode"
+                >
+                  VOIR EN DETAIL →
+                </HashLink>
               </div>
             </div>
+
             <div className="realisation-box">
-              <img src={reportageAccueil} alt="portrait" />
+              <img src="/images/index/reportage-acceuil.webp" alt="reportage" />
               <div className="description">
                 <h3>Reportages / Evénements</h3>
-                <HashLink to= "/portfolio#anchor-event" smooth arial-label="Voir les details des portraits"> VOIR EN DETAIL → </HashLink>
+                <HashLink
+                  to="/portfolio#anchor-event"
+                  smooth
+                  aria-label="Voir les détails des reportages"
+                >
+                  VOIR EN DETAIL →
+                </HashLink>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Slider */}
         <section className="overview-portfolio">
           <h2>Un Aperçu sur nos meilleures œuvres</h2>
           <div className="slider-container">
-            <div className="slider" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            <div
+              className="slider"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
               {images.map((img, index) => (
                 <div key={index} className="slide">
                   <img src={img} alt={`Slide ${index + 1}`} />
@@ -124,35 +163,71 @@ function Home() {
 
           <div className="dots">
             {images.map((_, index) => (
-              <span key={index} className={`dot ${index === currentIndex ? "active" : ""}`} onClick={() => setCurrentIndex(index)}></span>
+              <span
+                key={index}
+                className={`dot ${index === currentIndex ? "active" : ""}`}
+                onClick={() => setCurrentIndex(index)}
+              />
             ))}
           </div>
         </section>
 
+        {/* Vidéo */}
         <div className="presentation-video">
-          <video ref={videoRef} id="video" controls loading="lazy" poster={videoPoster} muted playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}>
-            <source src={videoFile} type="video/mp4" />
+          <video
+            ref={videoRef}
+            id="video"
+            autoPlay
+            muted
+            playsInline
+            preload="metadata"
+            poster="/video/video-mariage-poster.jpg"
+            controls
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          >
+            <source src="/video/video-mariage.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la lecture de cette vidéo.
           </video>
-          {!isPlaying && <button className="play-button" onClick={handlePlay}></button>}
         </div>
 
+        {/* Collaborations */}
         <table className="collaboration-table">
-          <caption> Collaborations </caption>
+          <caption>Collaborations</caption>
           <tbody>
-            <tr><td>📷 Nikon</td><td>Ambassadeur officiel, test de nouveaux objectifs</td></tr>
-            <tr><td>📸 Canon</td><td>Campagne "Capture the Moment"</td></tr>
-            <tr><td>🎞️ Fujifilm</td><td>Création d’une série documentaire en argentique</td></tr>
-            <tr><td>🏔️ The North Face</td><td>Expéditions photo en haute montagne</td></tr>
-            <tr><td>🚀 SpaceX</td><td>Projet spécial : "La photographie au-delà de la Terre"</td></tr>
+            <tr>
+              <td>📷 Nikon</td>
+              <td>Ambassadeur officiel, test de nouveaux objectifs</td>
+            </tr>
+            <tr>
+              <td>📸 Canon</td>
+              <td>Campagne "Capture the Moment"</td>
+            </tr>
+            <tr>
+              <td>🎞️ Fujifilm</td>
+              <td>Création d’une série documentaire en argentique</td>
+            </tr>
+            <tr>
+              <td>🏔️ The North Face</td>
+              <td>Expéditions photo en haute montagne</td>
+            </tr>
+            <tr>
+              <td>🚀 SpaceX</td>
+              <td>Projet spécial : "La photographie au-delà de la Terre"</td>
+            </tr>
           </tbody>
         </table>
 
+        {/* Section contact */}
         <section className="talk-with-us">
-          <h2> Créons quelque chose de grand !</h2>
-          <p> Nous vous faisons passer de la réalité d'aujourd'hui au potentiel de demain </p>
-          <Link to="/contact" className="button" aria-label="Aller à la page Contact"> Nous parler de votre projet </Link>
-
+          <h2>Créons quelque chose de grand !</h2>
+          <p>
+            Nous vous faisons passer de la réalité d'aujourd'hui au potentiel de
+            demain
+          </p>
+          <Link to="/contact" className="button" aria-label="Aller à la page Contact">
+            Nous parler de votre projet
+          </Link>
         </section>
       </main>
     </div>

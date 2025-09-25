@@ -1,5 +1,4 @@
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/images/index/web-log.svg";
 import { useState, useEffect, useRef } from "react";
 
 function Navbar() {
@@ -41,7 +40,7 @@ function Navbar() {
       {/* Logo */}
       <div className="logo">
         <NavLink to="/" aria-label="Accueil">
-          <img src={logo} alt="Logo site" width="32" height="32" />
+          <img src="/images/index/web-log.svg" alt="Logo site" width="32" height="32" />
         </NavLink>
       </div>
 

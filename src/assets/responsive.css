@@ -1,6 +1,6 @@
 @media (max-width: 1024px) {
 
-    body {
+    body, .form-container input, .form-container textarea  {
         font-size: 0.95rem;
     }
 
@@ -98,16 +98,17 @@
     }
 
     .portfolio-container {
-        grid-template-columns:repeat(2,350px);
+        grid-template-columns:repeat(2,370px);
         gap:20px
     }
     
+    .realisation-grid {
+        width:85%;
+        
+    }
 
-
-    .video-container video, .portfolio-container img {
-
-        width:100%;
-        height: 250px;
+    .video-frame, .video-frame video, .portfolio-container img {
+        height: 270px;
     }
 
     .portfolio-container h3 {
@@ -160,7 +161,10 @@
         width: 75%;
     }
 
-  
+    #video {
+    width: 80%;           
+
+    }
 
     .form-container button {
        
@@ -209,7 +213,7 @@
     h2 { font-size: 1.3rem; }         /* 20.8px */
     h3 { font-size: 1.1rem; }         /* 17.6px */
     h4 { font-size: 1rem; }           /* 16px */
-    body, p { font-size: 0.9rem; }    /* 14.4px */
+    body, p, .form-container input, .form-container textarea  { font-size: 0.9rem; }    /* 14.4px */
 
    .header-home, .header-rest {
         gap:40px;
@@ -291,10 +295,11 @@
         text-align: center;
     }
 
-    .presentation-video video {
-        width: 80%;
-        height: 400px;
-       
+    #video {
+    width: 95%;           
+    height: auto;       
+    border-radius: 10px;
+
     }
 
     .presentation {
@@ -317,11 +322,17 @@
     .realisation-grid {
         grid-template-columns:  1fr;
         min-width: 200px;
+        width: 80%;
+        
     }
 
     .realisation-box  {
       
         margin: auto;
+    }
+
+    .realisation h2 {
+        text-align: center;
     }
    
     .publications {
@@ -337,16 +348,12 @@
     .collaboration-table caption {
         font-size: 24px;
     }
-    .presentation-video video {
-        width: 90%;
-        height: 400px;
-       
-    }
+
 
     .collaboration-table{
         width:80%;
         margin: auto;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
     } 
 
     .talk-with-us {
@@ -393,15 +400,15 @@
     }
 
     .portfolio-container {
-        grid-template-columns:repeat(1,450px);
+        grid-template-columns:repeat(1,500px);
         justify-content: center;
         margin-bottom: 50px;
      
     }
     
-    .video-container video, .portfolio-container img {
+    .video-frame, .video-container video, .portfolio-container img {
 
-        height: 300px;
+        height: 350px;
     }
 
     .fullscreen {
@@ -420,7 +427,7 @@
     .map-form {
 
         flex-direction: column;
-        width: 70%;
+        width: 80%;
         height: auto;
         justify-content: center;
         align-items: center;
@@ -506,9 +513,9 @@
         justify-content: center;
         
     }
-    .video-container video, .portfolio-container img {
+    .video-frame, .video-container video, .portfolio-container img {
 
-        height: 200px;
+        height: 250px;
     }
 
     
@@ -540,9 +547,12 @@
 
 }
 
+@media (max-width: 450px) {
 
-
-
+   #video {
+    width: 100%;           
+    }
+}
 
 
 
@@ -580,13 +590,13 @@
     }
 
     .portfolio-container {
-        grid-template-columns:repeat(1,250px);
+        grid-template-columns:repeat(1,320px);
         
      
     } 
-      .video-container video, .portfolio-container img {
+      .video-frame, .video-container video, .portfolio-container img {
 
-        height: 150px;
+        height: 200px;
     }
 
     .form-container button {
@@ -625,7 +635,7 @@
     h2 { font-size: 1.2rem; }         /* 19.2px */
     h3 { font-size: 1rem; }           /* 16px */
     h4 { font-size: 0.95rem; }        /* 15.2px */
-    body, p, .collaboration-table { font-size: 0.875rem; }  /* 14px */
+    body, p, .collaboration-table, .form-container input, .form-container textarea  { font-size: 0.875rem; }  /* 14px */
 
 
 
@@ -648,9 +658,7 @@
     }
 
 
-    .realisation h2 {
-        text-align: center;
-    }
+
 
 
     .introduction .button, .talk-with-us .button, #scrolling-text {
@@ -699,5 +707,11 @@
        font-size: 14px;
         
     }
+
+    .portfolio-container {
+        grid-template-columns:repeat(1,300px);
+        
+     
+    } 
 
 }

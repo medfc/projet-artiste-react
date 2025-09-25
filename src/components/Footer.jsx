@@ -1,10 +1,4 @@
-import facebook from "../assets/images/index/facebook.png";
-import instagram from "../assets/images/index/instagram.png";
-import twitter from "../assets/images/index/twitter.png";
-import dribbble from "../assets/images/index/reseau-social.png";
 import { Link } from 'react-router-dom'
-
-
 
 function Footer() {
   return (
@@ -60,16 +54,16 @@ function Footer() {
         <p>Copyright &copy; 2025 Alban Kevin</p>
         <div className="icone-footer-bottom">
           <a href="https://www.facebook.com" aria-label="Page Facebook">
-            <img src={facebook} alt="Facebook" />
+            <img src="/images/index/facebook.png" alt="Facebook" />
           </a>
           <a href="https://www.instagram.com" aria-label="Page Instagram">
-            <img src={instagram} alt="Instagram" />
+            <img src="/images/index/instagram.png" alt="Instagram" />
           </a>
           <a href="https://x.com/?mx=2" aria-label="Page Twitter">
-            <img src={twitter} alt="Twitter" />
+            <img src="/images/index/twitter.png" alt="Twitter" />
           </a>
           <a href="https://dribbble.com" aria-label="Page Dribbble">
-            <img src={dribbble} alt="Dribbble" />
+            <img src="/images/index/reseau-social.png" alt="Dribbble" />
           </a>
         </div>
       </div>

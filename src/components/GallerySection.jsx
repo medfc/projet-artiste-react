@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
@@ -51,7 +50,8 @@ export default function GallerySection({ id, title, items }) {
                 e.key === "Enter" ? handleOpenMedia(i) : null
               }
             >
-              <img src={item.image} alt={item.title} />
+              {/* Ici on utilise le alt défini dans le JSON */}
+              <img src={item.image} alt={item.alt} />
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </div>
@@ -70,7 +70,7 @@ export default function GallerySection({ id, title, items }) {
                   type: "video",
                   poster: item.poster,
                   sources: [{ src: item.video, type: "video/mp4" }],
-                  autoPlay: true, // lecture auto en plein écran
+                  autoPlay: true
                 }
               : { src: item.image }
           )}

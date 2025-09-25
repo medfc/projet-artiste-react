@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import "../assets/contact.css";
 import MapEtFormulaire from "../components/MapEtFormulaire";
 import ScrollingText from "../components/ScrollingText";
@@ -12,6 +13,14 @@ function Contact() {
 
   return (
     <main>
+
+      <Helmet>
+        <title>Contact - Photographe Alban Kevin</title>
+        <meta
+          name="description"
+          content="Contactez Alban Kevin pour vos projets photo : portraits, mariages, voyages ou reportages. Studio situé à Mulhouse, France."
+        />
+      </Helmet>
       <div id="contact-banner" className="welcome-banner">
         <h2>Contact</h2>
       </div>
