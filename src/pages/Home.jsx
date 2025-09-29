@@ -8,14 +8,15 @@ import "../assets/style.css";
 
 function Home() {
   useScrollToTopOnMount();
-  const images = [
-    "/images/index/portrait.webp",
-    "/images/index/mariage.webp",
-    "/images/index/voyage.webp",
-    "/images/index/paysage-urbain.webp",
-    "/images/index/marriage-2.webp",
-    "/images/index/shooting.webp"
-  ];
+const images = [
+  { src: "/images/index/portrait.webp", alt: "Portrait d'une jeune femme avec cheveux attachés et fond rose" },
+  { src: "/images/index/mariage.webp", alt: "Mariée de profil tenant un bouquet de fleurs en extérieur" },
+  { src: "/images/index/voyage.webp", alt: "Photographe en randonnée devant une cascade en montagne" },
+  { src: "/images/index/paysage-urbain.webp", alt: "Rue urbaine vue d'en haut avec voitures et immeubles" },
+  { src: "/images/index/marriage-2.webp", alt: "Couple de mariés posant sur un pont en pierre dans un décor romantique" },
+  { src: "/images/index/shooting.webp", alt: "Femme en manteau marchant dans un couloir avec arcades" }
+];
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef(null);
@@ -28,7 +29,7 @@ function Home() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   // Gestion Safari : forcer muted et playsInline
   useEffect(() => {
@@ -155,7 +156,7 @@ function Home() {
             >
               {images.map((img, index) => (
                 <div key={index} className="slide">
-                  <img src={img} alt={`Slide ${index + 1}`} />
+                  <img src={img.src} alt={img.alt} />
                 </div>
               ))}
             </div>

@@ -29,10 +29,13 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 
 ## Page Portfolio
 
-- Affichage dynamique via API locale (JSON).
-- Présentation en grille responsive.
-- Clic sur une image/vidéo → ouverture en **plein écran (lightbox)**.
-- Navigation fluide sans rechargement.
+- Galerie présentant vos photos et vidéos.
+- Les nouveaux contenus ajoutés apparaissent automatiquement dans la galerie.
+- Affichage en grille, pratique pour parcourir plusieurs images et vidéos rapidement.
+- Clic sur une image ou une vidéo → ouverture en plein écran pour mieux la visualiser.
+- Le site est entièrement **responsive**, il s'adapte à tous les écrans (ordinateur, tablette, smartphone).
+- Navigation fluide, sans rechargement de la page.
+
 
 ---
 
@@ -52,17 +55,6 @@ Le site comporte 4 pages principales, accessibles via la barre de navigation ou 
 - Carte Google Maps.
 - Formulaire complet avec confirmation d’envoi.
 - Inscription à la newsletter.
-
----
-
-## Fonctionnalités techniques
-
-- SPA développée avec **React + Vite**.
-- Navigation fluide via **React Router**.
-- Données chargées en **AJAX**.
-- Formulaires contrôlés avec `useState`.
-- Lightbox photo/vidéo officielle.
-- Design responsive jusqu’à 320px.
 
 ---
 

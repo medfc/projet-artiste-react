@@ -2,79 +2,121 @@
 
 Projet développé dans le cadre d’une **soutenance pour la validation d’une formation en développement front-end React**.
 
-Ce site met en valeur le travail artistique d’un créateur à travers un portfolio, une présentation personnelle et un formulaire de contact. L’objectif est double : **valoriser une identité artistique** et **attirer de nouveaux clients ou collaborations**.
+Ce site met en valeur le travail artistique d’un créateur à travers un portfolio, une présentation personnelle et un formulaire de contact.  
+L’objectif est double : **valoriser une identité artistique** et **attirer de nouveaux clients ou collaborations**.
+
 
 ---
+
+
+## Pages principales
+
+| Page         | Description                                                                                              |
+|--------------|----------------------------------------------------------------------------------------------------------|
+| `/home`      | Page d’accueil avec bibliographie, présentation du portfolio et une carrousel d’images                   |
+| `/portfolio` | Galerie photos et vidéos avec possibilité de visualiser le contenu en plein écran                        |
+| `/apropos`   | Réalisations, chiffres clés, expositions, formulaire et carte interactive                                |
+| `/contact`   | Page contenant informations de contact détaillées, formulaire et carte interactive                       |
+
+
+
+---
+
 
 ## Fonctionnalités
 
-- **Page d’accueil** avec carrousel d’images
-- **Section Portfolio** dynamique avec galerie responsive
-- **Formulaire de contact** contrôlé avec gestion d’état (`custom hook`)
-- **Animations fidèles au design original HTML/CSS**
-- **Design responsive** jusqu’à 320px (smartphones)
-- **Code structuré** avec composants réutilisables
-- **Tests unitaires** pour les composants clés (`formulaire`, `texte défilant`, `galerie`)
-- **Hooks personnalisés** pour la gestion du scroll, du slider ou des champs contrôlés
+- **Bandeau de consentement aux cookies** affiché dès l'arrivée sur le site.
+- **Carrousel d’images** en page d’accueil pour découvrir l’univers artistique.
+- **Portfolio interactif** :
+  - Données simulées via une **API locale** (fichiers JSON).
+  - Visualisation des photos et vidéos en plein écran.
+- **Formulaires de contact** disponibles sur la page Contact et dans la section À propos.
+- **Navigation fluide et rapide** grâce au routage sans rechargement (SPA).
+- **Design entièrement responsive**, adapté à tous les écrans (ordinateurs, tablettes, smartphones, jusqu'à 320px).
+
 
 ---
 
+
+## Technologies utilisées
+
+Ce projet est une **SPA (Single Page Application)** développée avec les technologies suivantes :
+
+- **React 18** – Bibliothèque JavaScript pour construire l’interface utilisateur
+- **Vite** – Outil de développement et de build ultra rapide
+- **React Router DOM** – Navigation fluide entre les pages
+- **CSS** – Styles modulaires par page et fichier `responsive.css` centralisé
+- **Hooks personnalisés** – Gestion des formulaires, carrousel, auto play et du scroll.
+- **@testing-library/react** + **Vitest** – Tests unitaires des composants
+
+
+---
+
+## Performances et optimisation
+
+Le site a été analysé avec **Google Lighthouse**, l'outil d'audit de Google pour évaluer la qualité des applications web.
+
+Les résultats obtenus sont **supérieurs aux seuils recommandés**, garantissant :
+
+- **Performance** : site rapide et optimisé pour offrir une expérience fluide aux utilisateurs.
+- **Accessibilité** : conforme aux bonnes pratiques pour être utilisable par tous, y compris les personnes en situation de handicap.
+- **Bonnes pratiques** : respect des standards modernes de développement web.
+- **SEO (référencement)** : optimisé pour une meilleure visibilité dans les moteurs de recherche.
+
+> Ces analyses confirment que l'application répond aux exigences minimales fixées par Lighthouse pour une application web de qualité.
+
+
+---
 
 
 ## Structure du projet
 
 ```
 projet-artiste-react/
-├── public/
-├── src/
-│   ├── api/
-│   ├── assets/
-│   ├── components/
-│   ├── constants/
-│   ├── data/
-│   ├── hooks/
-│   ├── pages/
-│   ├── tests/
-│   ├── App.jsx
-│   └── main.jsx
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.js
-├── vercel.json
-├── README.md
-└── guide_utilisateur.txt
-
+├─ public/
+│  ├─ data/
+│  ├─ images/
+│  ├─ robots.txt
+│  └─ site-favicon.ico
+│
+├─ src/
+│  ├─ assets/               # Tous les fichiers CSS
+│  │         
+│  │
+│  ├─ components/           # Composants réutilisables
+│  │
+│  ├─ constants/            # Constante globale (config, data statique)
+│  │
+│  ├─ hooks/                 # Hooks personnalisés (useXXX.js)
+│  │
+│  ├─ pages/                 # Pages principales (Home, Contact, etc.)
+│  │
+│  ├─ tests/                 # Fichiers de tests (Vitest/Jest)
+│  │
+│  ├─ App.jsx
+│  └─ main.jsx
+│
+├─ index.html
+├─ package.json
+├─ package-lock.json
+├─ vite.config.js
+├─ vercel.json               # Config déploiement Vercel
+├─ README.md
+└─ guide_utilisateur.txt
 ```
 
 
 ---
 
-## Technologies utilisées
 
-- **React 18** – Bibliothèque JavaScript utilisée pour construire l’interface utilisateur
-- **Vite** – Outil de développement rapide pour les projets React
-- **React Router DOM** – Pour la navigation entre les pages (Home, Contact, Portfolio, À propos)
-- **CSS** – Feuilles de style modulaires par page + fichier `responsive.css` centralisé
-- **Hooks personnalisés** – Pour le formulaire contrôlé, le carrousel d’images, etc.
-- **@testing-library/react** + **Vitest** – Pour les tests unitaires des composants
+## Hooks personnalisés
+
+- `useFormInput.js` : gestion des champs contrôlés
+- `useAutoPlayWhenVisible.js` : autoplay vidéo sur scroll
+- `useScrollToTopOnMount.js` : retour en haut automatique
 
 
 ---
-
-
-
-## Pages principales
-
-| Page            | Description                                        |
-|--------------   |----------------------------------------------------|
-| `/home`         | Présente l’univers artistique avec un carrousel    |
-| `/portfolio`    | Galerie des réalisations artistiques               |
-| `/contact`      | Formulaire de contact interactif                   |
-| `/apropos`      | Informations sur l’artiste                         |
-
----
-
 
 
 ## Tests unitaires
@@ -85,7 +127,7 @@ Fichiers de test disponibles dans `src/tests`
 Tests réalisés :
 - Remplissage du formulaire (`MapEtFormulaire.test.jsx`)
 - Animation de texte défilant (`ScrollingText.test.jsx`)
-- Galerie d’images dynamique (`GallerySection.test.jsx`)
+    (`GallerySection.test.jsx`)
 
 Lancer les tests :
 ```bash
@@ -93,42 +135,33 @@ npm install
 npm test
 ```
 
----
-
-## Hooks personnalisés
-
-- `useFormInput.js` : gestion des champs contrôlés
-- `useAutoPlayWhenVisible.js` : autoplay vidéo sur scroll
-- `useImageSlider.js` : carrousel maison
-- `useScrollPosition.js` : effet sticky navbar
-- `useScrollToTopOnMount.js` : retour en haut automatique
 
 ---
 
-## Déploiement  
 
-Le projet est déployé avec "Vercel", une plateforme moderne pour héberger les applications React.  
+## Déploiement
 
-- Déploiement continu : à chaque mise à jour du code sur GitHub, Vercel reconstruit et publie automatiquement le site.  
-- Code source disponible sur GitHub :  
-- Repository GitHub: https://github.com/medfc/projet-artiste-react  
-- Site accessible en ligne :  
-- Site déployé https://projet-artiste-react.vercel.app  
+Le projet est déployé avec **Vercel**, une plateforme moderne pour héberger les applications React.
 
+- **Déploiement continu :** à chaque mise à jour du code sur GitHub, Vercel reconstruit et publie automatiquement le site.
+- **Code source :**  GitHub Repository (https://github.com/medfc/projet-artiste-react)
+- **Site en ligne :**  deployé avec vercel (https://projet-artiste-react.vercel.app)
 
 
 ---
+
 
 ## Installation locale
 
 ```bash
-git clone https://github.com/votre-utilisateur/projet-artiste-react.git
+git clone https://github.com/medfc/projet-artiste-react.git
 cd projet-artiste-react
 npm install
 npm run dev
 ```
 
 ---
+
 
 ## Auteur
 
