@@ -588,7 +588,7 @@
       .welcome-banner {
         width: 100%;
         height: 350px;
-        background-image: url('images/portfolio/banner-portfolio.webp');
+        background-image: url('/images/portfolio/banner-portfolio.webp');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
