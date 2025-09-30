@@ -46,7 +46,7 @@ Ce projet est une **SPA (Single Page Application)** développée avec les techno
 - **Vite** – Outil de développement et de build ultra rapide
 - **React Router DOM** – Navigation fluide entre les pages
 - **CSS** – Styles modulaires par page et fichier `responsive.css` centralisé
-- **Hooks personnalisés** – Gestion des formulaires, carrousel, auto play et du scroll.
+- **Hooks personnalisés** – Gestion des formulaires, auto play et du scroll.
 - **@testing-library/react** + **Vitest** – Tests unitaires des composants
 
 
@@ -127,7 +127,7 @@ Fichiers de test disponibles dans `src/tests`
 Tests réalisés :
 - Remplissage du formulaire (`MapEtFormulaire.test.jsx`)
 - Animation de texte défilant (`ScrollingText.test.jsx`)
-    (`GallerySection.test.jsx`)
+- Composant GallerySection (`GallerySection.test.jsx`)
 
 Lancer les tests :
 ```bash
@@ -135,7 +135,7 @@ npm install
 npm test
 ```
 
-
+Des tests sur plusieurs navigateurs ont été réalisés aussi a savoir: firefox, safari, chrome.
 ---
 
 
