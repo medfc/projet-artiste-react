@@ -9,12 +9,14 @@ const itemsToDisplay = [
   {
     id: 1,
     image: "image-test-1.jpg",
+    alt: "Image Test 1",
     title: "Image Test 1",
     description: "Ceci est une description 1",
   },
   {
     id: 2,
     image: "image-test-2.jpg",
+    alt: "Image Test 2",
     title: "Image Test 2",
     description: "Ceci est une description 2",
   },
