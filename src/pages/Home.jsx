@@ -7,7 +7,9 @@ import ScrollingText from "../components/ScrollingText";
 import "../assets/style.css";
 
 function Home() {
+// Remonte en haut de la page au montage
   useScrollToTopOnMount();
+// Images utilisées pour le slider
 const images = [
   { src: "/images/index/portrait.webp", alt: "Portrait d'une jeune femme avec cheveux attachés et fond rose" },
   { src: "/images/index/mariage.webp", alt: "Mariée de profil tenant un bouquet de fleurs en extérieur" },
@@ -17,7 +19,7 @@ const images = [
   { src: "/images/index/shooting.webp", alt: "Femme en manteau marchant dans un couloir avec arcades" }
 ];
 
-
+// Gestion d'etat pour le slider et la vidéo
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);

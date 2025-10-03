@@ -4,9 +4,10 @@ import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 
 export default function GallerySection({ id, title, items }) {
+  // Gestion etat: la lightbox et index de l’élément courant
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
-
+  // Ouvrir la lightbox sur l’élément cliqué
   const handleOpenMedia = (i) => {
     setIndex(i);
     setOpen(true);
@@ -14,11 +15,14 @@ export default function GallerySection({ id, title, items }) {
 
   return (
     <section className="portfolio-total">
+      {/* Titre de la section */}
       <h2 id={id}>{title}</h2>
 
+      {/* Affichage des médias (images ou vidéos) */}
       <div className="portfolio-container">
         {items.map((item, i) =>
           item.type === "video" ? (
+            // Bloc vidéo
             <div key={i} className="video-container">
               <div className="video-frame">
                 <video
@@ -40,6 +44,7 @@ export default function GallerySection({ id, title, items }) {
               <p>{item.description}</p>
             </div>
           ) : (
+            // Bloc image
             <div
               key={i}
               className="image-container"
@@ -50,7 +55,6 @@ export default function GallerySection({ id, title, items }) {
                 e.key === "Enter" ? handleOpenMedia(i) : null
               }
             >
-              {/* Ici on utilise le alt défini dans le JSON */}
               <img src={item.image} alt={item.alt} />
               <h3>{item.title}</h3>
               <p>{item.description}</p>
@@ -59,6 +63,7 @@ export default function GallerySection({ id, title, items }) {
         )}
       </div>
 
+      {/* Lightbox avec support vidéo et image */}
       {open && (
         <Lightbox
           open={open}

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 
 export default function CookieConsent() {
+  // État : afficher ou non la bannière de cookies
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Vérifie si l’utilisateur a déjà accepté les cookies
     const consentGiven = localStorage.getItem('cookiesAccepted') === 'true';
 
     if (consentGiven) {
@@ -15,6 +17,7 @@ export default function CookieConsent() {
     }
   }, []);
 
+   // Quand l’utilisateur accepte
   const handleAccept = () => {
     localStorage.setItem('cookiesAccepted', 'true');
     document.body.classList.remove('block-all');
@@ -24,6 +27,7 @@ export default function CookieConsent() {
 
   return (
     <>
+      {/* Affichage conditionnel de la bannière */}
       {isVisible && (
         <div className="cookie-banner">
           <p>

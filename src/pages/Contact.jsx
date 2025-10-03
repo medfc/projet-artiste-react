@@ -7,6 +7,7 @@ import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
 
 
 function Contact() {
+  // Remonte en haut de la page au montage
   useScrollToTopOnMount();
 
 
@@ -24,7 +25,7 @@ function Contact() {
       <div id="contact-banner" className="welcome-banner">
         <h2>Contact</h2>
       </div>
-
+      {/* Infos de contact (adresse, email, téléphone) */}
       <section className="contact-info">
         <div className="contact-box">
           <div className="icon">📍</div>
@@ -47,7 +48,7 @@ function Contact() {
           <a href="tel:+33617026497">APPELER À TOUT MOMENT →</a>
         </div>
       </section>
-
+      {/* Carte + formulaire de contact */}
       <MapEtFormulaire />
 
 

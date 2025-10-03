@@ -2,18 +2,19 @@ import { useEffect, useState } from "react";
 import { useFormInput } from "../hooks/useFormInput";
 
 function MapEtFormulaire() {
+  // Champs du hook personnalisé
   const fullName = useFormInput("");
   const email = useFormInput("");
   const site = useFormInput("");
   const message = useFormInput("");
 
-
+  // État pour savoir si les cookies ont été acceptés
   const [allowed, setAllowed] = useState(
     localStorage.getItem("cookiesAccepted") === "true"
   );
 
   useEffect(() => {
-    
+    // Si acceptation, Autoriser de la carte
     const onConsent = () => setAllowed(true);
     window.addEventListener("consent-accepted", onConsent);
 
@@ -22,7 +23,7 @@ function MapEtFormulaire() {
       if (e.key === "cookiesAccepted" && e.newValue === "true") setAllowed(true);
     };
     window.addEventListener("storage", onStorage);
-
+    // Nettoyage des listeners au démontage
     return () => {
       window.removeEventListener("consent-accepted", onConsent);
       window.removeEventListener("storage", onStorage);
@@ -31,6 +32,7 @@ function MapEtFormulaire() {
 
   return (
     <section className="map-form">
+      {/* Bloc carte Google Maps */}
       <div className="map-container">
         {allowed ? (
         
@@ -61,7 +63,7 @@ function MapEtFormulaire() {
           </div>
         )}
       </div>
-
+      {/* Bloc formulaire de contact */}
       <div className="form-container">
         <h2>Un projet en tête ?</h2>
         <p>

@@ -4,7 +4,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
+        {/* Bloc newsletter + contact */}
         <div className="newsletter-contact">
+          {/* Newsletter inscription */}
           <div className="newsletter">
             <h3>Nous suivre à travers nos œuvres et nos futurs projets</h3>
             <form action="#" method="post">
@@ -25,7 +27,7 @@ function Footer() {
               expositions et inspirations.
             </p>
           </div>
-
+          {/* Infos de contact */}
           <div className="contact">
             <h3>Contact</h3>
             <p>
@@ -37,7 +39,7 @@ function Footer() {
             </a>
           </div>
         </div>
-
+        {/* Liens internes vers les pages du site */}
         <aside className="links">
           <h3>Liens</h3>
           <ul>
@@ -49,7 +51,7 @@ function Footer() {
       </div>
 
       <hr className="footer-line" />
-
+      {/* Bas de page avec copyright et réseaux sociaux */}
       <div className="footer-bottom">
         <p>Copyright &copy; 2025 Alban Kevin</p>
         <div className="icone-footer-bottom">

@@ -4,7 +4,7 @@
   export async function fetchPortfolioData() {
     try {
       const response = await fetch("/data/portfolioData.json"); 
-
+      // Si la réponse n’est pas correcte
       if (!response.ok) {
         throw new Error(`Erreur réseau : ${response.status} ${response.statusText}`);
       }

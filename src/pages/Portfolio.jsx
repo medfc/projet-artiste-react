@@ -7,12 +7,14 @@ import ScrollingText from "../components/ScrollingText";
 import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
 
 function Portfolio() {
+  // Remet la page en haut au montage
   useScrollToTopOnMount();
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Récupération des données au montage
   useEffect(() => {
     fetchPortfolioData()
       .then((portfolio) => {

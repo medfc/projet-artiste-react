@@ -7,6 +7,7 @@ import useScrollToTopOnMount from "../hooks/useScrollToTopOnMount";
 
 
 function Apropos() {
+  // Fait remonter en haut de la page
   useScrollToTopOnMount();
 
 
@@ -23,7 +24,7 @@ function Apropos() {
       <div id="apropos-banner" className="welcome-banner">
         <h2>À propos</h2>
       </div>
-
+      {/* Statistiques principales */}
       <div className="apropos-container">
         <div className="box">
           <h3>150+</h3>
@@ -42,7 +43,7 @@ function Apropos() {
         </div>
       </div>
 
-
+      {/* Section chiffres clés */}
       <section className="key-figures">
         <h3>Chiffres Clés</h3>
         <div className="stats">
@@ -51,7 +52,7 @@ function Apropos() {
           <div><h4>5</h4><p>Pays où les œuvres ont été exposées</p></div>
         </div>
       </section>
-
+      {/* Section expositions et événements */}   
       <section className="expositions">
         <h3>Expositions & Événements</h3>
         <div className="event-list">
@@ -60,7 +61,9 @@ function Apropos() {
           <div className="event"><h4>Rétrospective Photographique</h4><p>📍 New York, USA – Septembre 2025</p></div>
         </div>
       </section>
+      {/* Carte + formulaire de contact */}
       <MapEtFormulaire />
+      {/* Texte défilant en bas de page */}
       <ScrollingText />
 
      
