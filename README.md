@@ -52,6 +52,15 @@ Ce projet est une **SPA (Single Page Application)** développée avec les techno
 
 ---
 
+## Responsive Design
+
+Le site est entièrement responsive, offrant une expérience fluide et cohérente sur tous les supports : ordinateurs, tablettes et smartphones.
+L’affichage s’adapte automatiquement à la taille de l’écran afin de garantir une navigation confortable, quelle que soit la résolution de l’appareil(jusqu'à 320px).
+
+Le site a également été testé sur plusieurs navigateurs modernes (Chrome, Firefox, Safari) afin d’assurer une compatibilité et un rendu homogène sur l’ensemble des plateformes.
+
+---
+
 ## Performances et optimisation
 
 Le site a été analysé avec **Google Lighthouse**, l'outil d'audit de Google pour évaluer la qualité des applications web.
@@ -165,6 +174,6 @@ npm run dev
 
 ## Auteur
 
-Projet réalisé par ** Mohamed Guellil**  
-Dans le cadre d’une soutenance de formation de développeur front-end React.  
-Merci pour votre attention !
+  Projet réalisé par ** Mohamed Guellil**  
+  Dans le cadre d’une soutenance de formation de développeur front-end React.  
+  Merci pour votre attention !
